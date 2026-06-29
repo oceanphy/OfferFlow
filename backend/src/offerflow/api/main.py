@@ -1,4 +1,11 @@
+from pathlib import Path
+
+from dotenv import load_dotenv
 from fastapi import FastAPI, Request
+
+# Load .env from backend directory (project root when running via uv run/pycharm)
+_env_path = Path(__file__).resolve().parents[3] / ".env"
+load_dotenv(_env_path)
 
 from offerflow.api.routes import (
     create_kb_entry,

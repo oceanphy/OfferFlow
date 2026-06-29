@@ -13,7 +13,7 @@ from offerflow.harness.agents.diagnosis_agents import (
     ReportGenerationAgent,
 )
 from offerflow.harness.agents.orchestrator import AgentOrchestrator
-from offerflow.harness.engine.llm_client import LLMClient
+from offerflow.harness.engine.llm_client import BaseLLMClient
 from offerflow.harness.engine.token_budget import ResponseCache
 from offerflow.harness.skills.protocol import SkillProtocol, SkillResult, SkillStatus
 from offerflow.harness.tools.split_rounds import SplitRoundsTool
@@ -33,7 +33,7 @@ class DiagnoseTranscriptSkill(SkillProtocol):
 
     def __init__(
         self,
-        llm: LLMClient | None = None,
+        llm: BaseLLMClient | None = None,
         cache: ResponseCache | None = None,
     ):
         self._splitter = SplitRoundsTool()

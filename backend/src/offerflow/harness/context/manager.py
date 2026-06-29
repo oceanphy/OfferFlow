@@ -5,7 +5,7 @@ from __future__ import annotations
 import json
 from typing import Any
 
-from offerflow.harness.engine.llm_client import LLMClient
+from offerflow.harness.engine.llm_client import BaseLLMClient
 from offerflow.harness.engine.token_budget import TokenBudget
 
 COMPRESSION_PROMPT = """Summarize these completed interview round diagnoses into a compact form.
@@ -67,7 +67,7 @@ class DiagnosisContext:
 
     _OUTPUT_RESERVE = 4000
 
-    def __init__(self, llm: LLMClient | None = None) -> None:
+    def __init__(self, llm: BaseLLMClient | None = None) -> None:
         self._llm = llm
         self.system_prompt = ContextLayer("system_prompt", 2000)
         self.current_task = ContextLayer("current_task", 2000)

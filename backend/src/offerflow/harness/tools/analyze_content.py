@@ -10,7 +10,7 @@ import re
 import time
 from typing import Any
 
-from offerflow.harness.engine.llm_client import LLMClient
+from offerflow.harness.engine.llm_client import BaseLLMClient
 from offerflow.harness.engine.prompts import CONTENT_DIAGNOSIS_SYSTEM, CONTENT_DIAGNOSIS_USER
 from offerflow.harness.engine.token_budget import ResponseCache
 from offerflow.harness.models import ContentDiagnosis, Gap, KnowledgeBaseEntry
@@ -33,7 +33,7 @@ class AnalyzeContentTool(ToolProtocol):
         "required": ["question", "answer"],
     }
 
-    def __init__(self, llm: LLMClient | None = None, cache: ResponseCache | None = None):
+    def __init__(self, llm: BaseLLMClient | None = None, cache: ResponseCache | None = None):
         self._llm = llm
         self._cache = cache
 

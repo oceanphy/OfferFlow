@@ -9,7 +9,7 @@ from typing import Any
 from fastapi import Request
 from fastapi.responses import JSONResponse, StreamingResponse
 
-from offerflow.harness.engine.llm_client import LLMClient
+from offerflow.harness.engine.llm_client import BaseLLMClient, create_llm_client
 from offerflow.harness.engine.token_budget import ResponseCache
 from offerflow.harness.memory.store import (
     DiagnosisHistory,
@@ -21,17 +21,11 @@ from offerflow.harness.skills import DiagnoseTranscriptSkill
 
 _report_store: dict[str, dict[str, Any]] = {}
 _cache = ResponseCache()
-# seed knowledge base entries (in-memory, replaced by DB later)
 _kb_entries: list[dict[str, Any]] = []
 
 
-def _get_llm() -> LLMClient | None:
-    import os
-
-    api_key = os.getenv("OPENAI_API_KEY", "")
-    if api_key:
-        return LLMClient()
-    return None
+def _get_llm() -> BaseLLMClient | None:
+    return create_llm_client()
 
 
 async def diagnose_transcript(request: Request):

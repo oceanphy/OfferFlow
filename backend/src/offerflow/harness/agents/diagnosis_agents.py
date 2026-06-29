@@ -5,7 +5,7 @@ from __future__ import annotations
 from typing import Any
 
 from offerflow.harness.agents.protocol import AgentResult, SubAgent
-from offerflow.harness.engine.llm_client import LLMClient
+from offerflow.harness.engine.llm_client import BaseLLMClient
 from offerflow.harness.engine.token_budget import ResponseCache
 from offerflow.harness.tools.analyze_content import AnalyzeContentTool
 from offerflow.harness.tools.analyze_expression import AnalyzeExpressionTool
@@ -20,7 +20,7 @@ class ContentDiagnosisAgent(SubAgent):
 
     def __init__(
         self,
-        llm: LLMClient | None = None,
+        llm: BaseLLMClient | None = None,
         cache: ResponseCache | None = None,
         kb_tool: QueryKnowledgeBaseTool | None = None,
     ):
@@ -55,7 +55,7 @@ class ExpressionDiagnosisAgent(SubAgent):
     description = "评估回答的逻辑结构、措辞、条理"
     context_boundary = ["question", "answer"]
 
-    def __init__(self, llm: LLMClient | None = None, cache: ResponseCache | None = None):
+    def __init__(self, llm: BaseLLMClient | None = None, cache: ResponseCache | None = None):
         self._analyze = AnalyzeExpressionTool(llm=llm, cache=cache)
         self.tools = [self._analyze]
 

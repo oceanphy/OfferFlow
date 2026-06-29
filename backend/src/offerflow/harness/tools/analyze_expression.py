@@ -7,7 +7,7 @@ import re
 import time
 from typing import Any
 
-from offerflow.harness.engine.llm_client import LLMClient
+from offerflow.harness.engine.llm_client import BaseLLMClient
 from offerflow.harness.engine.prompts import (
     EXPRESSION_DIAGNOSIS_SYSTEM,
     EXPRESSION_DIAGNOSIS_USER,
@@ -29,7 +29,7 @@ class AnalyzeExpressionTool(ToolProtocol):
         "required": ["question", "answer"],
     }
 
-    def __init__(self, llm: LLMClient | None = None, cache: ResponseCache | None = None):
+    def __init__(self, llm: BaseLLMClient | None = None, cache: ResponseCache | None = None):
         self._llm = llm
         self._cache = cache
 
