@@ -90,7 +90,8 @@ class GenerateReportTool(ToolProtocol):
                 if content.get("gaps"):
                     lines.append("\n**差距：**\n")
                     for g in content["gaps"]:
-                        g = g if isinstance(g, dict) else g.__dict__
+                        if not isinstance(g, dict):
+                            g = vars(g)
                         lines.append(f"- {g.get('description', '')}")
                         if g.get("suggestion"):
                             lines.append(f"  > 建议：{g['suggestion']}")
@@ -152,7 +153,8 @@ class GenerateReportTool(ToolProtocol):
             c = rd.get("content", {})
             if c:
                 for g in c.get("gaps", []):
-                    g = g if isinstance(g, dict) else g.__dict__
+                    if not isinstance(g, dict):
+                        g = vars(g)
                     all_gaps.append(g.get("description", ""))
                 all_highlights.extend(c.get("highlights", []))
 

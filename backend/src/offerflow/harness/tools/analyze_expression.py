@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 import re
 import time
+from dataclasses import asdict
 from typing import Any
 
 from offerflow.harness.engine.llm_client import BaseLLMClient
@@ -54,7 +55,7 @@ class AnalyzeExpressionTool(ToolProtocol):
 
             return self.make_result(
                 success=True,
-                data=diagnosis.__dict__,
+                data=asdict(diagnosis),
                 duration_ms=(time.perf_counter() - start) * 1000,
                 params={"answer_length": len(answer)},
             )
