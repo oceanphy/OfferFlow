@@ -1,0 +1,23 @@
+[project]
+name = "offerflow"
+version = "0.1.0"
+description = "Interview diagnosis engine — structured feedback on interview answers"
+readme = "README.md"
+authors = [
+    { name = "oceanphy", email = "3101526745@qq.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.138.1",
+    "httpx>=0.28.1",
+    "openai>=2.44.0",
+    "pydantic>=2.13.4",
+    "uvicorn[standard]>=0.49.0",
+]
+
+[project.scripts]
+offerflow = "offerflow.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.11.11,<0.12.0"]
+build-backend = "uv_build"
