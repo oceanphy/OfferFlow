@@ -56,20 +56,20 @@
 
 ---
 
-## Phase 4 — L10: Sub-agent 并行分发 ⬚
+## Phase 4 — L10: Sub-agent 并行分发 ✅
 
-- [ ] `SubAgent` 协议
-- [ ] 四个 sub-agent 实现：ContentDiagnosis / ExpressionDiagnosis / KnowledgeBenchmarking / ReportGeneration
-- [ ] `AgentOrchestrator`：并行分发 + 超时控制 + 结果聚合
-- [ ] Sub-agent 上下文隔离
+- [x] `SubAgent` 协议
+- [x] 四个 sub-agent 实现：ContentDiagnosis / ExpressionDiagnosis / KnowledgeBenchmarking / ReportGeneration
+- [x] `AgentOrchestrator`：并行分发 + 超时控制 + 结果聚合
+- [x] Sub-agent 上下文隔离
 
 ---
 
-## Phase 5 — L2: Skills 任务编排 + API 层 ⬚
+## Phase 5 — L2: Skills 任务编排 + API 层 ✅
 
-- [ ] `SkillProtocol`：`name`, `pipeline`, `lifecycle`
-- [ ] 核心 Skill `diagnose_transcript`
-- [ ] FastAPI routes：`POST /api/diagnose` (SSE), `GET /api/report/{id}`
+- [x] `SkillProtocol`：`name`, `pipeline`, `lifecycle`
+- [x] 核心 Skill `diagnose_transcript`
+- [x] FastAPI routes：`POST /api/diagnose` (SSE), `GET /api/report/{id}`
 
 ---
 
