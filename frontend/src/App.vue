@@ -2,10 +2,7 @@
 </script>
 
 <template>
-  <div class="app">
-    <h1>OfferFlow</h1>
-    <p>Interview Diagnosis Engine</p>
-  </div>
+  <router-view />
 </template>
 
 <style>
@@ -17,17 +14,7 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-}
-
-.app {
-  max-width: 800px;
-  margin: 80px auto;
-  text-align: center;
-  color: #333;
-}
-
-.app h1 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
+  background: #f8fafc;
+  color: #2d3748;
 }
 </style>
