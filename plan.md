@@ -81,22 +81,22 @@
 
 ---
 
-## Phase 7 — L5+L6+L7: Memory + Permission + Sessions ⬚
+## Phase 7 — L5+L6+L7: Memory + Permission + Sessions ✅
 
-- [ ] L5 Memory：UserProfile / DiagnosisHistory / SessionContext
-- [ ] L7 Sessions：中断恢复
-- [ ] L6 Permission：数据删除 API、模型调用不附带用户身份
-
----
-
-## Phase 8 — L8+L9: Command + Hook ⬚
-
-- [ ] L8 Command：CLI 入口 `offerflow diagnose <file>`
-- [ ] L9 Hook：扩展点 `pre_diagnose`, `post_round`, `post_report`
+- [x] L5 Memory：UserProfile / DiagnosisHistory / SessionContext
+- [x] L7 Sessions：中断恢复
+- [x] L6 Permission：数据删除 API、模型调用不附带用户身份
 
 ---
 
-## Phase 9 — 知识库管理 ⬚
+## Phase 8 — L8+L9: Command + Hook ✅
 
-- [ ] CRUD API：`POST/GET/PUT/DELETE /api/knowledge/entries`
-- [ ] 条目结构：题目、关键词、参考答案、评分标准、常见错误
+- [x] L8 Command：CLI 入口 `offerflow diagnose <file>`
+- [x] L9 Hook：扩展点 `pre_diagnose`, `post_round`, `post_report`
+
+---
+
+## Phase 9 — 知识库管理 ✅
+
+- [x] CRUD API：`POST/GET/PUT/DELETE /api/knowledge/entries`
+- [x] 条目结构：题目、关键词、参考答案、评分标准、常见错误
