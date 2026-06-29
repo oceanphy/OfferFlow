@@ -23,6 +23,24 @@ uv run uvicorn offerflow.api.main:app --reload --port 8000
 
 启动后访问 http://localhost:8000/health 返回 `{"status":"ok"}`。
 
+### 停止服务
+
+按 `Ctrl+C` 终止进程。如果进程异常退出导致端口被占用（Windows 常见：`WinError 10013`）：
+
+```powershell
+# PowerShell — 查找占用 8000 端口的进程
+netstat -ano | findstr :8000 | findstr LISTENING
+
+# 杀掉对应 PID（替换为实际 PID）
+taskkill /F /PID <PID>
+```
+
+```bash
+# Git Bash / WSL
+netstat -ano | grep LISTENING | grep :8000
+taskkill //F //PID <PID>
+```
+
 ## PyCharm 配置
 
 1. 用 PyCharm 打开 `backend/` 目录
