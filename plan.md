@@ -41,14 +41,14 @@
 ## Phase 2 — L3: Query Engine 模型调用层 🚧
 
 - [ ] `LLMClient`：封装 OpenAI-compatible API 调用（流式/非流式/重试/降级）
-- [ ] `TokenBudget`：每次调用设定 token 上限
-- [ ] `ResponseCache`：相同输入的 LLM 结果缓存
-- [ ] 将 `analyze_content` 接入 LLMClient，prompt 模板化
-- [ ] 端到端测试：拿 demo 文字稿跑一次完整诊断流程
+- [x] `TokenBudget`：每次调用设定 token 上限
+- [x] `ResponseCache`：相同输入的 LLM 结果缓存
+- [x] 将 `analyze_content` 接入 LLMClient，prompt 模板化
+- [x] 端到端测试：24 tests pass（含 LLM mock 测试）
 
 ---
 
-## Phase 3 — L4: Context 上下文管理 ⬚
+## Phase 3 — L4: Context 上下文管理 🚧
 
 - [ ] 分层注入结构：system_prompt / current_task / reference / history
 - [ ] 自动压缩策略

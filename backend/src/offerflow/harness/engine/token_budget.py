@@ -36,6 +36,8 @@ class TokenBudget:
     @staticmethod
     def estimate(text: str) -> int:
         """Rough token estimation: ~2.5 chars per token for mixed Chinese/English."""
+        if not text:
+            return 0
         return max(1, len(text) // 2)
 
     @staticmethod
