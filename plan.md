@@ -25,20 +25,20 @@
 
 ---
 
-## Phase 1 — L1: Tools 原子能力 ⬚
+## Phase 1 — L1: Tools 原子能力 ✅
 
-- [ ] 定义 `ToolProtocol`：`name`, `description`, `parameters` (JSON Schema), `execute(**kwargs) -> ToolResult`
-- [ ] `ToolResult` 数据类：`success`, `data`, `error_type` (input_error/service_error/timeout), `audit_log`
-- [ ] 实现 `split_rounds`：输入全文 → 输出 `list[InterviewRound]`
-- [ ] 实现 `analyze_content`：输入单轮 Q&A + 证据源 → 输出内容诊断结果
-- [ ] 实现 `query_knowledge_base`：输入问题文本 → 输出匹配的知识库条目
-- [ ] 实现 `generate_report`：输入所有回合诊断摘要 → 输出完整诊断报告（Markdown）
-- [ ] 审计日志机制
-- [ ] 单元测试
+- [x] 定义 `ToolProtocol`：`name`, `description`, `parameters` (JSON Schema), `execute(**kwargs) -> ToolResult`
+- [x] `ToolResult` 数据类：`success`, `data`, `error_type` (input_error/service_error/timeout), `audit_log`
+- [x] 实现 `split_rounds`：输入全文 → 输出 `list[InterviewRound]`
+- [x] 实现 `analyze_content`：输入单轮 Q&A + 证据源 → 输出内容诊断结果
+- [x] 实现 `query_knowledge_base`：输入问题文本 → 输出匹配的知识库条目
+- [x] 实现 `generate_report`：输入所有回合诊断摘要 → 输出完整诊断报告（Markdown）
+- [x] 审计日志机制
+- [x] 单元测试（15 tests pass）
 
 ---
 
-## Phase 2 — L3: Query Engine 模型调用层 ⬚
+## Phase 2 — L3: Query Engine 模型调用层 🚧
 
 - [ ] `LLMClient`：封装 OpenAI-compatible API 调用（流式/非流式/重试/降级）
 - [ ] `TokenBudget`：每次调用设定 token 上限
